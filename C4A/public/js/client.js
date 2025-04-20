@@ -50,11 +50,16 @@ socket.on("new user", function (data) {
   data.map(function (user) {
           return addToUsersBox(user);
       });
+
+  //Add message to say new user has joined
+  addNewMessage({user: '', message: `${userName} has joined the chat.`, className: 'newUser'});
 });
 
 //when a user leaves
 socket.on("user disconnected", function (userName) {
   document.querySelector(`.${userName}-userlist`).remove();
+
+  addNewMessage({user: '', message: `${userName} has left the chat.`})
 });
 
 
@@ -71,8 +76,8 @@ const addNewMessage = ({ user, message }) => {
     <div class="received__message">
       <p>${message}</p>
       <div class="message__info">
-        <span class="message__author">${user}</span>
-        <span class="time_date">${formattedTime}</span>
+        <span class="message__author" style="color: #4266c9";>${user}</span>
+        <span class="time_date" style="color: gray;">${formattedTime}</span>
       </div>
     </div>
   </div>`;
@@ -82,7 +87,7 @@ const addNewMessage = ({ user, message }) => {
     <div class="sent__message">
       <p>${message}</p>
       <div class="message__info">
-        <span class="time_date">${formattedTime}</span>
+        <span class="time_date" style="color: gray";>${formattedTime}</span>
       </div>
     </div>
   </div>`;
