@@ -116,3 +116,18 @@ main {
   font-size: 18px;
   margin-inline: 10%;
 }
+
+.profile-picture-info {
+  display: block;
+  padding: 25px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  height: 300px;
+  width: 300px;
+}
+
+.info-p {
+  font-size: 18px;
+  margin-inline: 10%;
+  margin-left: 300px;
+}
