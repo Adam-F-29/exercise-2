@@ -131,3 +131,7 @@ main {
   margin-inline: 10%;
   margin-left: 300px;
 }
+
+ul {
+  list-style-position: inside;
+}
